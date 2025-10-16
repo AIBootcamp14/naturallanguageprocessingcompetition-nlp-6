@@ -82,8 +82,14 @@ train.csv 학습 파일(이하 학습데이터)과 dev.csv 검증 파일(이하 
 - final result 43.2775
 
 ### Try 5
-- 학습 및 검증 데이터 노이즈 제거
-- 노이즈 제거 이후 다시 증강 
+- EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks 논문 참고하여 데이터 증강 
+1. 유의어로 교체(Synonym Replacement, SR): 문장에서 랜덤으로 stop words가 아닌 n 개의 단어들을 선택해 임의로 선택한 동의어들 중 하나로 바꾸는 기법.
+2. 랜덤 삽입(Random Insertion, RI): 문장 내에서 stop word를 제외한 나머지 단어들 중에서, 랜덤으로 선택한 단어의 동의어를 임의로 정한다. 그리고 동의어를 문장 내 임의의 자리에 넣는걸 n번 반복한다.
+3. 랜덤 교체(Random Swap, RS): 무작위로 문장 내에서 두 단어를 선택하고 위치를 바꾼다. 이것도 n번 반복
+4. 랜덤 삭제(Random Deletion, RD): 확률 p를 통해 문장 내에 있는 각 단어들을 랜덤하게 삭제한다.
+
+- Word2vector, TF-IDF 기술을 통해 유의어 사전 생성 
+- nltk, konlpy 설치
 
 ### Try 6
 - 학습 및 검증 데이터 노이즈 제거
