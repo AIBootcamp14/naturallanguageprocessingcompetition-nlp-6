@@ -63,11 +63,11 @@ test.csv 파일 (이하 평가데이터) 499 쌍
 - 학습, 평가데이터에서 topic 컬럼이 합쳐서 약 9000 건 이상을 확인함. 학습과 평가 데이터에서는 많이 겹치지는 않았음.
 - 학습, 평가데이터에서 #Person1#, #Person2#, #Person3#" 등의 발화자는 #Person7#까지 7명이 나오는 대화를 확인하였고 평가데이터에서는 #Person3#까지 나오는 대화를 확인함
 - 학습데이터 확인결과:
-#Person3# -> 116문장
-#Person4# -> 15문장
-#Person5# -> 5문장
-#Person6# -> 2문장
-#Person7# -> 1문장
+ - #Person3# -> 116문장
+ - #Person4# -> 15문장
+ - #Person5# -> 5문장
+ - #Person6# -> 2문장
+ - #Person7# -> 1문장
 
 - 학습, 검증데이터에서는 #Person1#, #PhoneNumber#, #Address# 등의 Special tokens 24개가 나오는 것을 확인하였으나 평가데이터에서는 기본 config 설정과 마찬가지로 6가지의 Special tokens을 확인함 
 - 
