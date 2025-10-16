@@ -5,10 +5,11 @@
 
 ## 프로젝트 소개
 ### <프로젝트 소개>
-- _이번 프로젝트에 대해 소개를 작성해주세요_
+- Dialogue Summarization 경진대회는 주어진 데이터를 활용하여 일상 대화에 대한 요약을 효과적으로 생성하는 모델을 개발하는 대회이다.
 
 ### <작품 소개>
-- _만드신 작품에 대해 간단한 소개를 작성해주세요_
+- baseline code 에서 digit82/kobart-summarization, gogamza/kobart-base-v2(이하 gogamza) 모델을 학습해보고 gogamza 모델의 rouge 점수가 약간 높음을 확인하였다.
+
 
 <br>
 
@@ -22,9 +23,9 @@
 <br>
 
 ## 1. 개발 환경 및 기술 스택
-- 주 언어 : _ex) python_
-- 버전 및 이슈관리 : _ex) github_
-- 협업 툴 : _ex) github, notion_
+- 주 언어 : python_
+- 버전 및 이슈관리 : github, 슬랙
+- 협업 툴 : _ex) github, notion, 슬랙
 
 <br>
 
@@ -45,13 +46,43 @@
 
 <br>
 
-## 3. 구현 기능
-### 기능1
-- _작품에 대한 주요 기능을 작성해주세요_
-### 기능2
-- _작품에 대한 주요 기능을 작성해주세요_
-### 기능3
-- _작품에 대한 주요 기능을 작성해주세요_
+## 3. 시도해본 것들
+### Try 1
+- baseline code 에서 digit82/kobart-summarization, gogamza/kobart-base-v2(이하 gogamza) 모델을 학습해보고 gogamza 모델의 rouge 점수가 약간 높음을 확인하였다.
+
+### Try 2
+- k-fold 앙상블 학습 및 추론
+train.csv 학습 파일(이하 학습데이터)과 dev.csv 검증 파일(이하 검증데이터)을 모두 학습에 사용해 보았으나 성능 개선 없었음. 
+
+### Try 3
+- 데이터 EDA
+학습 데이터 12,457 쌍
+검증 데이터 499 쌍
+test.csv 파일 (이하 평가데이터) 499 쌍
+평가데이터는 공개(250 쌍), 비공개(249 쌍) 데이터 나뉨
+- 학습, 평가데이터에서 topic 컬럼이 합쳐서 약 9000 건 이상을 확인함. 학습과 평가 데이터에서는 많이 겹치지는 않았음.
+- 학습, 평가데이터에서 #Person1#, #Person2#, #Person3#" 등의 발화자는 #Person7#까지 7명이 나오는 대화를 확인하였고 평가데이터에서는 #Person3#까지 나오는 대화를 확인함
+- 학습데이터 확인결과:
+#Person3# -> 116문장
+#Person4# -> 15문장
+#Person5# -> 5문장
+#Person6# -> 2문장
+#Person7# -> 1문장
+
+- 학습, 검증데이터에서는 #Person1#, #PhoneNumber#, #Address# 등의 Special tokens 24개가 나오는 것을 확인하였으나 평가데이터에서는 기본 config 설정과 마찬가지로 6가지의 Special tokens을 확인함 
+- 
+
+### Try 4
+- solar API 프롬프트 엔지니어링을 통한 요약
+final result 43.2775
+
+### Try 5
+- 학습 및 검증 데이터 노이즈 제거
+- 노이즈 제거 이후 다시 증강 
+
+### Try 6
+- 학습 및 검증 데이터 노이즈 제거
+- 노이즈 제거 이후 다시 증강 
 
 <br>
 
